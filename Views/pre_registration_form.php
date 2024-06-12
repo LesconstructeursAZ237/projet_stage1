@@ -6,7 +6,6 @@
     <title> Page Acceuil </title>
     <link rel="stylesheet" href="./../Assets/Css/style.css">
     <script src="./../Assets/Js/nav.js" defer></script>
-    <script src="./bg_images.js" defer></script>
 </head>
 <body>
     <!-- star header -->
@@ -21,13 +20,13 @@
                 <ul  class="font-medium flex flex-row text-justify mt-8 justify-between overflow-x-auto ">
 
                     <li class="  hover:bg-gray-200 rounded-lg  ">
-                       <button> <a href="./registration_form.html"class="text-sky-500 font-bold p-8">Inscription</a></button>
-                    </li>
+                        <button> <a href="./index.php"class="text-sky-500 font-bold p-8">Acceuil</a></button>
+                     </li>
 
                     <li class="  hover:bg-gray-200 rounded-lg  ">
                         <button> <a href="#"class="text-sky-500 font-bold p-8">Connexion</a></button>
                      </li>
-
+                     
                     <li class="  hover:bg-gray-200 rounded-lg  ">
                         <a href="#"class="text-sky-500 font-bold p-8" >Deconnexion</a>
                     </li>
@@ -71,13 +70,13 @@
                     </div>
         </div>
     </nav>
-  <!-- ajout des images de font du debut, se trouvant dans le fichier bg_imges.css -->
+  <!-- ajout des images de font du debut, function js dans Assets/js/nav.js -->
     
     <div class=" flex float-none items-center justify-center h-screen col-start-2 col-span-4 overflow-hidden">
 
         <div id="slider" class=" bg-white p-4">
             
-                <img src="./../Assets/Images/equipefootball2.jpg" alt="Image 1" class="w-full h-full object-contain hidden">
+                <img src="./../Assets/Images/cotidiene3.jpg" alt="Image 1" class="w-full h-full object-contain hidden">
 
                 <img src="./../Assets/Images/cotidiene2.jpg" alt="Image 1" class="w-full h-full object-contain hidden">
                      
@@ -96,18 +95,75 @@
     </div>
   
  <!-- space work start -->
+        <!-- formulaire de pre-inscription // formulaire visiteur -->
 
-            <div class="bg-gray-100 h-52 p-4 text-center shadow-xl rounded-lg m-8 overflow-auto">
-                <h1 class=" text-2xl  m-2 capitalize  text-blue-500 font-bold">
-                    pourquoi choisir Le Leader en informatique?
-                </h1>
-                <p class="">Lorem ipsum dolor sit amet consectetur,<br> adipisicing elit.
-                     Eaque quasi neque sunt delectus accusamus possimus at est,<br>
-                     enim, unde ipsa dignissimos. Ad ex delectus corrupti possimus iusto voluptatum ipsam sequi!
-                </p>
+            <div class="mt-8 mb-8 text-center shadow-xl rounded-lg m-auto max-w-xl  overflow-auto border border-gray-400">
+
+                    <form action="./../Api/model/class_pre_register.php" class="" id="registration" method="post">
+                        
+                        <div class=" p-4 bg-gra-100 overflow-auto rounded-lg  m-auto" >
+                            <h1 class=" text-2xl  m-2 capitalize  text-sky-500 font-bold"> formulaire d'inscription a une formation.</h1>
+
+                            <label for="" class="text-black font-bold ">Nom: <br>
+                                <input required  type="text" placeholder="Votre Nom Ici" id="name" name="name" class="font-normal rounded-md text-center h-10 w-4/5  placeholder-gray-400 border border-gray-400" > 
+                            </label> <br>
+
+                            <label for="" class="text-black font-bold ">Prénom: <br>
+                                <input required  type="text" placeholder="Votre prénom Ici" id="first_name" name="first_name" class="font-normal rounded-md text-center h-10 w-4/5  placeholder-gray-400 border border-gray-400" > 
+                            </label> <br>
+
+                            <label for="" class="text-black font-bold ">Adresse Email: <br>
+                                <input required type="email" placeholder="Votre Adresse Email ici" id="mail" name="mail" class="font-normal rounded-md text-center h-10 w-4/5  placeholder-gray-400 border border-gray-400" >
+                            </label> <br> 
+
+                            <label for="" class="text-black font-bold">Numero de telephone: <br>
+                                    <div class="bg-sky-500 p-1 h-10 w-1/12 text-white font-bold
+                                        rounded-md text-center float-left"> 
+                                        +237
+                                    </div>
+                                <input required type="number" placeholder="Votre Numero de telephone: ex: 000111222" id="phone" name="phone" class="font-normal rounded-md text-center h-10 w-4/5  placeholder-gray-400 border border-gray-400" > 
+                            </label> <br> 
+                        
+                           
+                            
+                            <!-- list of trainings , function js dans Assets/js/nav.js -->
+                            <label for="" class="text-black font-bold ">Choisir au plus deux(02) formation:</label> <br>
+
+                            <label>
+                                <input type="checkbox" name="training_check[]" value="GP"> Graphisme de production (infographie)
+                            </label><br>
+                            <label>
+                                <input type="checkbox" name="training_check[]" value="SB"> scretariat bureautique
+                            </label><br>
+                            <label>
+                                <input type="checkbox" name="training_check[]" value="MAV"> montage audio-visuel
+                            </label><br>
+                            <label>
+                                <input type="checkbox" name="training_check[]" value="MRV"> maintenance des reseaux informatiques
+                            </label><br>
+                            <label>
+                                <input type="checkbox" name="training_check[]" value="MI"> maintenance informatique
+                            </label><br>
+                            <label>
+                                <input type="checkbox" name="training_check[]" value="SC"> scretariat compatble
+                            </label><br>
+                            <label>
+                                <input type="checkbox" name="training_check[]" value="comptabilite info"> comptabilite informatisée
+                            </label><br>
+                            <label>
+                                <input type="checkbox" name="training_check[]" value="marketing digit"> marketing digital
+                            </label><br>
+                            <label>
+                                <input type="checkbox" name="training_check[]" value="da"> developpement d'application
+                            </label><br> <br>
+                                
+                             <button type="sumbit" class="bg-sky-500 p-1 h-10 w-1/4 hover:bg-blue-300 text-white font-bold
+                             rounded-md text-center" id="btn_submit">Envoyer</button>                                              
+                        </div>                      
+                    </form>
             </div>
           
-            <div class="bg-sky-500  m-4 h-16 text-2xl text-center shadow-xl rounded-xl">
+            <div class="bg-sky-500  m-4 h-16 text-2xl text-center shadow-xl ">
                 <h1 class=" p-4 capitalize text-white font-bold">
                     nous formons en :
                 </h1>
@@ -129,7 +185,7 @@
                             </button>
                         </a>
 
-                        <a href="./registration_form.html">
+                        <a href="#registration">
                             <button class=" h-10 w-32 bg-blue-500 text-white font-bold hover:bg-blue-700 rounded">
                                 M'inscrire
                             </button>
@@ -150,7 +206,7 @@
                             </button>
                         </a>
 
-                        <a href="./registration_form.html">
+                        <a href="#registration">
                             <button class=" h-10 w-32 bg-blue-500 text-white font-bold hover:bg-blue-700 rounded">
                                 M'inscrire
                             </button>
@@ -171,7 +227,7 @@
                             </button>
                         </a>
 
-                        <a href="./registration_form.html">
+                        <a href="#registration">
                             <button class=" h-10 w-32 bg-blue-500 text-white font-bold hover:bg-blue-700 rounded">
                                 M'inscrire
                             </button>

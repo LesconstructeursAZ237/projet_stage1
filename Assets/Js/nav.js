@@ -65,14 +65,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //function js de choix de formation
 document.addEventListener('DOMContentLoaded', function() {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"][name="choix"]');
+    const checkboxes = document.querySelectorAll('input[type="checkbox"][name="training_check[]"]');
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', function() {
-            const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"][name="choix"]:checked');
+            const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"][name="training_check[]"]:checked');
             if (checkedCheckboxes.length > 2) {
                 this.checked = false;
-                alert('Vous ne pouvez sélectionner que 02 formatios au maximum.');
+                alert('Vous ne pouvez sélectionner que 02 (deux) formations au maximum.');
             }
         });
     });
 });
+
+
+/*  // ecouteur d'evenement sur les champs name et phone
+var bouton = document.getElementById('btn_submit');
+// Ajoutez un écouteur d'événement "click" au bouton
+bouton.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name");
+    const phone = document.getElementById("phone");
+
+     if((phone.value.length) !== 9){
+        alert("veillez entrer une longueur de numero telephonique valide");
+        window.location.href = "pre_registration_form.html";
+    } 
+   
+}); */
+ 
